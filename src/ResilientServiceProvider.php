@@ -4,8 +4,8 @@
 namespace TomHart\HttpClient;
 
 
-use GuzzleHttp\ClientInterface;
 use Illuminate\Support\ServiceProvider;
+use TomHart\HttpClient\Contracts\ResilientClientInterface;
 
 class ResilientServiceProvider extends ServiceProvider
 {
@@ -20,8 +20,8 @@ class ResilientServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/resilient-http.php', 'resilient-http');
+        $this->mergeConfigFrom(__DIR__ . '/../config/resilient-http.php', 'resilient-http');
 
-        $this->app->bind(ClientInterface::class, ResilientClient::class);
+        $this->app->bind(ResilientClientInterface::class, ResilientClient::class);
     }
 }
