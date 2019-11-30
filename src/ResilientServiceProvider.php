@@ -22,8 +22,6 @@ class ResilientServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/resilient-http.php', 'resilient-http');
 
-
-        $this->app->bind('http-client', ResilientClient::class);
         $this->app->bind(ClientInterface::class, ResilientClient::class);
     }
 }

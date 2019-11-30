@@ -1,13 +1,12 @@
 <?php
 return [
     /*
-     * How long should the resilient client hold on to it's cache for?
+     * How long should the normal client hold on to it's cache for? Time in seconds
      */
-    'cache_time' => env('RESILIENT_CACHE_TIME', 600),
+    'cache_time' => env('RESILIENT_CACHE_TIME', 60),
 
     /*
-     * Prefix the resilient cache key
+     * How long should the fallback client hold on to it's cache for? Time in seconds
      */
-    'cache_prefix' => env('RESILIENT_CACHE_PREFIX', 'resilient')
-
+    'fallback_cache_time' => env('RESILIENT_FALLBACK_CACHE_TIME', 3600),
 ];
